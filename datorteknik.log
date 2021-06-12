@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.6) (preloaded format=pdflatex 2021.6.11)  12 JUN 2021 00:38
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.6) (preloaded format=pdflatex 2021.6.11)  12 JUN 2021 17:05
 entering extended mode
 **./datorteknik.tex
 (datorteknik.tex
@@ -57,11 +57,7 @@ tex.def
 File: l3backend-pdftex.def 2021-05-07 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count191
 \l__pdf_internal_box=\box50
-) (datorteknik.aux
-
-LaTeX Warning: Label `fig:mesh1' multiply defined.
-
-)
+) (datorteknik.aux)
 \openout1 = `datorteknik.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 10.
@@ -154,39 +150,32 @@ Underfull \hbox (badness 10000) in paragraph at lines 96--101
 
 [8]
 Chapter 4.
-<i9.png, id=37, 190.46156pt x 308.65312pt>
-File: i9.png Graphic file (type png)
-<use i9.png>
-Package pdftex.def Info: i9.png  used on input line 110.
-(pdftex.def)             Requested size: 117.00119pt x 189.60625pt.
 
-LaTeX Warning: `h' float specifier changed to `ht'.
+Underfull \hbox (badness 10000) in paragraph at lines 106--109
+
+ []
 
 [9
 
-] [10 <./i9.png>] (datorteknik.aux)
-
-LaTeX Warning: There were multiply-defined labels.
-
- ) 
+] [10] (datorteknik.aux) ) 
 Here is how much of TeX's memory you used:
- 1295 strings out of 478864
- 20341 string characters out of 2848660
- 321338 words of memory out of 3000000
- 19249 multiletter control sequences out of 15000+600000
+ 1285 strings out of 478864
+ 20230 string characters out of 2848660
+ 321299 words of memory out of 3000000
+ 19239 multiletter control sequences out of 15000+600000
  408897 words of font info for 45 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 57i,7n,66p,819b,234s stack positions out of 5000i,500n,10000p,200000b,80000s
-<C:/Users/needl/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/
-cmbx12.pfb><C:/Users/needl/AppData/Local/Programs/MiKTeX/fonts/type1/public/ams
-fonts/cm/cmmi12.pfb><C:/Users/needl/AppData/Local/Programs/MiKTeX/fonts/type1/p
-ublic/amsfonts/cm/cmr12.pfb><C:/Users/needl/AppData/Local/Programs/MiKTeX/fonts
-/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/needl/AppData/Local/Programs/MiKT
-eX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/needl/AppData/Local/Progra
-ms/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on datorteknik.pdf (11 pages, 423587 bytes).
+ 57i,7n,66p,1076b,230s stack positions out of 5000i,500n,10000p,200000b,80000s
+<C:/Users/needl/AppData/Local/Programs/MiKTeX/fonts/t
+ype1/public/amsfonts/cm/cmbx12.pfb><C:/Users/needl/AppData/Local/Programs/MiKTe
+X/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/needl/AppData/Local/Progr
+ams/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/needl/AppData/Loc
+al/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/needl/App
+Data/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/ne
+edl/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
+Output written on datorteknik.pdf (11 pages, 395702 bytes).
 PDF statistics:
- 72 PDF objects out of 1000 (max. 8388607)
+ 69 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 11 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 6 words of extra memory for PDF output out of 10000 (max. 10000000)
 
