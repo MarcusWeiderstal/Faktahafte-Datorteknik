@@ -1,17 +1,17 @@
-\contentsline {chapter}{\numberline {1}Introduktion}{2}{}%
-\contentsline {section}{\numberline {1.1}Om häftet}{2}{}%
-\contentsline {chapter}{\numberline {2}Datorsystem}{3}{}%
-\contentsline {section}{\numberline {2.1}Data och dator}{3}{}%
-\contentsline {section}{\numberline {2.2}Datordel}{3}{}%
-\contentsline {section}{\numberline {2.3}Datorsystem}{4}{}%
-\contentsline {section}{\numberline {2.4}Hårdvara}{4}{}%
-\contentsline {section}{\numberline {2.5}Mjukvara}{4}{}%
-\contentsline {section}{\numberline {2.6}Vikten av att använda rätt begrepp}{4}{}%
-\contentsline {chapter}{\numberline {3}Matematiken i en dator}{5}{}%
-\contentsline {section}{\numberline {3.1}Talbaser}{5}{}%
-\contentsline {section}{\numberline {3.2}Det decimala talsystemet}{6}{}%
-\contentsline {section}{\numberline {3.3}Det binära talsystemet}{6}{}%
-\contentsline {section}{\numberline {3.4}Bitar och bytes}{7}{}%
-\contentsline {section}{\numberline {3.5}Prefix och enhet}{8}{}%
-\contentsline {chapter}{\numberline {4}Processor}{9}{}%
-\contentsline {section}{\numberline {4.1}Klockningsfrekvens}{9}{}%
+\contentsline {chapter}{\numberline {1}Introduktion}{2}%
+\contentsline {section}{\numberline {1.1}Om häftet}{2}%
+\contentsline {chapter}{\numberline {2}Datorsystem}{3}%
+\contentsline {section}{\numberline {2.1}Data och dator}{3}%
+\contentsline {section}{\numberline {2.2}Datordel}{3}%
+\contentsline {section}{\numberline {2.3}Datorsystem}{4}%
+\contentsline {section}{\numberline {2.4}Hårdvara}{4}%
+\contentsline {section}{\numberline {2.5}Mjukvara}{4}%
+\contentsline {section}{\numberline {2.6}Vikten av att använda rätt begrepp}{4}%
+\contentsline {chapter}{\numberline {3}Matematiken i en dator}{5}%
+\contentsline {section}{\numberline {3.1}Talbaser}{5}%
+\contentsline {section}{\numberline {3.2}Det decimala talsystemet}{6}%
+\contentsline {section}{\numberline {3.3}Det binära talsystemet}{6}%
+\contentsline {section}{\numberline {3.4}Bitar och bytes}{7}%
+\contentsline {section}{\numberline {3.5}Prefix och enhet}{8}%
+\contentsline {chapter}{\numberline {4}Processor}{9}%
+\contentsline {section}{\numberline {4.1}Klockningsfrekvens}{9}%
