@@ -1,6 +1,6 @@
 \contentsline {chapter}{\numberline {1}Introduktion}{2}%
 \contentsline {section}{\numberline {1.1}Om häftet}{2}%
-\contentsline {chapter}{\numberline {2}Några begrepp inom datorsystem}{3}%
+\contentsline {chapter}{\numberline {2}Centrala begrepp i kursen}{3}%
 \contentsline {section}{\numberline {2.1}Data och dator}{3}%
 \contentsline {section}{\numberline {2.2}Datordel}{3}%
 \contentsline {section}{\numberline {2.3}Datorsystem}{4}%
