@@ -44,6 +44,9 @@ Mjukvara är alla programvara som körs i ett datorsystem. Allt ifrån operativs
 \section{Vikten av att använda rätt begrepp}
 Det kan tyckas stelt och rätt fyrkantigt med alla dessa ord. Men som du kommer märka ju längre du studerar och arbetar med datorer finns det ett syfte. Vi vill så mycket så möjligt undvika missförstånd, både när vi pratar med andra datortekniker men också även med kunder. Det är en rätt stor skillnad på arbetsinsats och kostnad om det är datan eller datorn som är trasig. Ett bättre grafikkort kostar betydligt mer än att försöka återställa ett krashat operativsystem. Både inköpskostnad av hårdvara men också i arbetstimmar för en datortekniker. 
 
+\chapter{Von-neuman arkitektur}
+fweiofjweoiewfj
+
 \chapter{Matematiken i en dator}
 Om man bryter ner till den minsta beståndsdelen av vad en dator gör så är det en processor som adderar, subtraherar, multiplicerar och dividerar olika tal. Av dessa enkla operationer på tal får vi sedan en fullt fungerande dator. Allt ifrån vårt favoritspel på steam till google docs som jag skriver detta i. Allt i en dator är alltså matematik. Därför behöver man ha koll på sin matte om man ska arbeta med datorer. Både för att kunna avgöra vad som gör en datordel bra men också för att kunna förklara och förstå hur en dator fungerar. 
 
@@ -102,12 +105,31 @@ Tera - 1 000 000 000 000\\\\\\
 När använder man bits och när använder man bytes? En grundregel brukar vara att när vi pratar om hur snabbt vi kan förflytta data, till exempel genom en buss eller nätverkskabel, så används bitar. När vi pratar om data som ska lagras i till exempelt ett primärminne eller hårddisk så brukar man använda bytes. 
 
 \chapter{Processor}
-En processor brukar lite slarvigt kallas för datorns hjärna. Processorn kallas i bland för CPU vilket är en förkortning för engelskans central processing unit. Hastigheten på en processor mäts i Hertz. Hertz är antalet gånger pulsklockan i processorn under en sekund. Varje gång denna klocka slår gör processorn något. 
+En processor brukar lite slarvigt kallas för datorns hjärna. Processorns namn förkortas oftast fCPU vilket är en förkortning för engelskans central processing unit. Hastigheten på en processor mäts i Hertz. Hertz är antalet gånger pulsklockan i processorn under en sekund. Varje gång denna klocka slår gör processorn något. 
 
-\section{Klockningsfrekvens}
+\section{Introduktion}
+I detta avsnitt ska vi ta en titt på några nyckelbegrepp och komponenter i den moderna processorn. Vi ska lära oss hur man avgör hur snabb en processor är samt några olika delar i processorn som hjälper processorn att arbeta snabbare. 
+
+\subsection{Klockningsfrekvens}
 För att ett datorsystem ska kunna göra något behöver processorns klocka skicka en puls. 
 När en sån puls skickas brukar man säga att processorns pulsklocka slår. Denna klockningsfrekvens mäts i hertz. 1 Hz är ett klockslag per sekund. Eftersom en dator gör väldigt många operationer och ska göra dessa snabbt mäts oftast en processorklocka med prefixen mega eller giga. Varje gång gång klockan slår så utför processorn något. Det kan var allt ifrån att addera två tal till att flytta ett tal till från ett register till att annat. Eftersom processorn utför väldigt enkla processer stegvis krävs det oftast ett antal klockslag för att faktiskt utföra. För att till exempel addera två tal ska den först hämta båda talen från ett register (två klockslag), addera dessa två tal (ännu ett klockslag) och sedan spara resultatet i något register (ännu ett klockslag). Lägg därtil att dessa tal troligtvis har hämtats från primärminnet för att sedan lagras i processorns olika cacheminnen innan det har flyttat till processorns register. Som sagt, det krävs många klockslag för att uföra saker.\\\\
 Historiskt sett har man inom processorn alltid försökt öka hertzen för att därmed få en snabbare processor. För runt tio år sen stötte man dock på ett problem. Vid runt 3,5 GHz började vi problem med värmen. Skulle vi alltså få upp klockningsfrekvens ännu mer skulle vi behöva arbeta mer med kylning. Det var då man uppfann cores som på svenska oftast benämns som kärnor.
 
+\subsection{Kärnor}
+Enda sedan man började bygga processorer har man försökt få dom att arbeta snabbare. Olika teknikers har försökts implementera i processorn för att få upp klockningsfrekvensen. Det ironiska är att det som underlättat mest för att få processorn att arbeta snabbare har inte varit ökningen av just klockningsfrekvensen utan implemeteringen av flera kärnor i en processor. Den traditionella enkärninga processorn arbetar så att den utför något när klockan slår, utför nästa grej nästa gång klockan slår osv. På grund av detta uppstår snabbt en kö av saker som behöver göras. Datorn upplevs som långsam. \\\\
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.4\textwidth]{motorvag}
+    \caption{Essingeleden}
+    \label{fig:mesh1}
+\end{figure}
+
+Vi kan dra liknelsen mellan en flerfilig bilväg. På en enfilig bilväg bildas det lätt köer om det är många bilar som vill åka samtidigt. En lösning skulle då kunna vara att öka hstigheten på vägen så att bilarna kan åka därifrån snabbare. Men vi skullle också kunna
+bygga fler filer så att fler bilar får plats. Det kommer bli betydligt mindre köer om vi tillexempel har fyra filer på essingeleden än en. Precis så fungerar kärnor. Vi delar ut datan som behöver beräknas på flera olika kärnor istället för att tvinga en kärna jobba supersnabbt.\\\\\
+
+Det var med bakgrund av detta man utvecklade kärnor i en processor. Kärnor gör så att varje gång processorklockan slår så kan du göra flera saker beroende på hur många kärnor du har i din processor. Om du har en fyrkärning processor så kan du göra fyra saker parapellt varje processorns klocka slår. Så medans kärna ett utför en operation på två tal så kan kärna två göra något annat, till exempel att addera två andra tal. Du kan därför inte bara titta på klockningsfrekvensen när du ska avgöra hur bra och snabb en processor är. Även antal kärnor påverkar prestandan markant. 
+
+\subsection{Cacheminne}
+En processor hämta data från hela datorsystemet som den sen ska beräkna. Det kan vara allt ifrån information som kommmer från en USB-ansluten enhet till data från en hårddisk. All den datan lagras först i primärminnet för att sedan hämtas till processorn för att kunna beräknas med. OFtast uppstår det här en flaskhals då datan ska fraktas från primärminnet in till CPUn. Processorn beräknar oftast snabbare än vad det tar för datan att transporteras dit, därför kan den ibland få stå och vänta på datan som den ska beräkna. För råda bot på detta problem introducerade man cacheminne i processorn. Det är ett litet minne som sitter i processorn som förvarar den datan som processorn snart ska beräkna. På så sätt vet processorn att datan redan finns där och behöver därför inte stanna upp och vänta på att datan ska transporteras till CPUn. 
 
 \end{document}
