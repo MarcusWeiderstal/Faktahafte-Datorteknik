@@ -113,10 +113,10 @@ I detta avsnitt ska vi ta en titt på några nyckelbegrepp och komponenter i den
 \subsection{Klockningsfrekvens}
 För att ett datorsystem ska kunna göra något behöver processorns klocka skicka en puls. 
 När en sån puls skickas brukar man säga att processorns pulsklocka slår. Denna klockningsfrekvens mäts i hertz. 1 Hz är ett klockslag per sekund. Eftersom en dator gör väldigt många operationer och ska göra dessa snabbt mäts oftast en processorklocka med prefixen mega eller giga. Varje gång gång klockan slår så utför processorn något. Det kan var allt ifrån att addera två tal till att flytta ett tal till från ett register till att annat. Eftersom processorn utför väldigt enkla processer stegvis krävs det oftast ett antal klockslag för att faktiskt utföra. För att till exempel addera två tal ska den först hämta båda talen från ett register (två klockslag), addera dessa två tal (ännu ett klockslag) och sedan spara resultatet i något register (ännu ett klockslag). Lägg därtil att dessa tal troligtvis har hämtats från primärminnet för att sedan lagras i processorns olika cacheminnen innan det har flyttat till processorns register. Som sagt, det krävs många klockslag för att uföra saker.\\\\
-Historiskt sett har man inom processorn alltid försökt öka hertzen för att därmed få en snabbare processor. För runt tio år sen stötte man dock på ett problem. Vid runt 3,5 GHz började vi problem med värmen. Skulle vi alltså få upp klockningsfrekvens ännu mer skulle vi behöva arbeta mer med kylning. Det var då man uppfann cores som på svenska oftast benämns som kärnor.
+Historiskt sett har man inom processorn alltid försökt öka hertzen för att därmed få en snabbare processor. För runt tio år sen stötte man dock på ett problem. Vid runt 3,5 GHz började vi få problem med värmen. Skulle vi alltså få upp klockningsfrekvens ännu mer skulle vi behöva arbeta mer med kylning. Det var då man uppfann cores som på svenska oftast benämns som kärnor.
 
 \subsection{Kärnor}
-Enda sedan man började bygga processorer har man försökt få dom att arbeta snabbare. Olika teknikers har försökts implementera i processorn för att få upp klockningsfrekvensen. Det ironiska är att det som underlättat mest för att få processorn att arbeta snabbare har inte varit ökningen av just klockningsfrekvensen utan implemeteringen av flera kärnor i en processor. Den traditionella enkärninga processorn arbetar så att den utför något när klockan slår, utför nästa grej nästa gång klockan slår osv. På grund av detta uppstår snabbt en kö av saker som behöver göras. Datorn upplevs som långsam. \\\\
+Enda sedan man började bygga processorer har man försökt få dom att arbeta snabbare. Olika tekniker har försökts implementera i processorn för att få upp klockningsfrekvensen. Det ironiska är att det som underlättat mest för att få processorn att arbeta snabbare har inte varit ökningen av just klockningsfrekvensen utan implemeteringen av flera kärnor i en processor. Den traditionella enkärninga processorn arbetar så att den utför något när klockan slår, utför nästa grej nästa gång klockan slår osv. På grund av detta uppstår snabbt en kö av saker som behöver göras och datorn upplevs som långsam. Det var med bakgrund av detta man utvecklade kärnor i en processor. \\\\
 \begin{figure}[h]
     \centering
     \includegraphics[width=0.4\textwidth]{motorvag}
@@ -124,12 +124,31 @@ Enda sedan man började bygga processorer har man försökt få dom att arbeta s
     \label{fig:mesh1}
 \end{figure}
 
-Vi kan dra liknelsen mellan en flerfilig bilväg. På en enfilig bilväg bildas det lätt köer om det är många bilar som vill åka samtidigt. En lösning skulle då kunna vara att öka hstigheten på vägen så att bilarna kan åka därifrån snabbare. Men vi skullle också kunna
-bygga fler filer så att fler bilar får plats. Det kommer bli betydligt mindre köer om vi tillexempel har fyra filer på essingeleden än en. Precis så fungerar kärnor. Vi delar ut datan som behöver beräknas på flera olika kärnor istället för att tvinga en kärna jobba supersnabbt.\\\\\
+Vi kan dra liknelsen mellan en flerfilig bilväg. På en enfilig bilväg bildas det lätt köer om det är många bilar som vill åka samtidigt. En lösning skulle då kunna vara att öka hastigheten på vägen så att bilarna kan åka därifrån snabbare. Men vi skullle också kunna
+bygga fler filer så att fler bilar får plats. Det kommer bli betydligt mindre köer om vi tillexempel har fyra filer på essingeleden än en. Precis på samma sätt fungerar kärnor. Vi delar ut (distribuerar)datan som behöver beräknas på flera olika kärnor istället för att tvinga en kärna jobba supersnabbt.\\\\\
 
-Det var med bakgrund av detta man utvecklade kärnor i en processor. Kärnor gör så att varje gång processorklockan slår så kan du göra flera saker beroende på hur många kärnor du har i din processor. Om du har en fyrkärning processor så kan du göra fyra saker parapellt varje processorns klocka slår. Så medans kärna ett utför en operation på två tal så kan kärna två göra något annat, till exempel att addera två andra tal. Du kan därför inte bara titta på klockningsfrekvensen när du ska avgöra hur bra och snabb en processor är. Även antal kärnor påverkar prestandan markant. 
+Kärnor gör så att varje gång processorklockan slår så kan du göra flera saker samtidigt beroende på hur många kärnor du har i din processor. Det är som en processor i processorn. Om du har en fyrkärning processor så kan du göra fyra saker parapellt varje processorns klocka slår. Så medans kärna ett utför en operation på två tal så kan kärna två göra något annat, till exempel att addera två andra tal. Du kan därför inte bara titta på klockningsfrekvensen när du ska avgöra hur bra och snabb en processor är. Även antal kärnor påverkar prestandan markant. 
 
 \subsection{Cacheminne}
-En processor hämta data från hela datorsystemet som den sen ska beräkna. Det kan vara allt ifrån information som kommmer från en USB-ansluten enhet till data från en hårddisk. All den datan lagras först i primärminnet för att sedan hämtas till processorn för att kunna beräknas med. OFtast uppstår det här en flaskhals då datan ska fraktas från primärminnet in till CPUn. Processorn beräknar oftast snabbare än vad det tar för datan att transporteras dit, därför kan den ibland få stå och vänta på datan som den ska beräkna. För råda bot på detta problem introducerade man cacheminne i processorn. Det är ett litet minne som sitter i processorn som förvarar den datan som processorn snart ska beräkna. På så sätt vet processorn att datan redan finns där och behöver därför inte stanna upp och vänta på att datan ska transporteras till CPUn. 
+En processor hämta data från hela datorsystemet som den sen ska beräkna. Det kan vara allt ifrån information som kommmer från en USB-ansluten enhet till data från en hårddisk. All den datan lagras först i primärminnet för att sedan hämtas till processorn för att kunna beräknas med. Oftast uppstår det här en flaskhals då datan ska fraktas från primärminnet in till CPUn. Processorn beräknar oftast snabbare än vad det tar för datan att transporteras dit, därför kan den ibland få stå och vänta på datan som den ska beräkna. För råda bot på detta problem introducerade man cacheminne i processorn. Det är ett litet minne som sitter i processorn som förvarar den datan som processorn snart ska beräkna. På så sätt vet processorn att datan redan finns där och behöver därför inte stanna upp och vänta på att datan ska transporteras till CPUn.\\
 
+Cacheminnet kommer i flera olika nivåer. L2, L3 och L4 är de vanligaste. L2 tillhör en enskild kärna medans L3 och L4 tillhör hela processorn. Ju lägre nivå det är på minnet, desto mindre är minnet samt sitter närmare själva kärnan. 
+
+\subsection{Instuderingsfrågor - Introduktion till processorn}
+\begin{enumerate}
+   \item Vad är Hertz?\\\\\\
+   \item Vad står CPU för?\\\\\\
+   \item Vad är en kärna i processorn?\\\\\\
+   \item Vad är cacheminnet? Vad för problem löser det?\\\\\\
+   \item Vad menas med olika nivåer (levels) av cacheminnet? Vad är skillnade på L2 och L4?\\\\\\
+   \item Nämn tre saker som påverkar hastigheten i en processor\\\\\\
+\end{enumerate}
+ 
+\newpage
+
+
+
+\section{Processorns olika delar}
+I detta avsnitt ska vi ta en titt på processorns olika delar och fördjupa oss i dessa. 
+\subsection{ALU}
 \end{document}
